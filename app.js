@@ -48,13 +48,23 @@ buttons.forEach((button)=>{
 });
 });
 
+const keys = "0123456789/*-+"
+document.addEventListener("keydown", (event) => {
+    if(keys.includes(event.key)){
+        screen.textContent += event.key;
+    }
+    if(event.key === 'Enter') calculate();
+});
+
 const clear = document.querySelector("#clear");
 clear.addEventListener("click", ()=>{
     screen.textContent = "";
 });
 
 const equal = document.querySelector("#equal");
-equal.addEventListener("click", ()=>{
+equal.addEventListener("click", calculate());
+
+function calculate(){
     let operationString = screen.textContent;
     screen.textContent = "";
     operationString = operationString.replace("=", "");
@@ -65,7 +75,7 @@ equal.addEventListener("click", ()=>{
     console.log(num1);
     console.log(num2);
     screen.textContent = (operate(operator, num1, num2));
-});
+}
 
 const backspace = document.querySelector("#backspace");
 backspace.addEventListener("click", ()=>{
