@@ -15,7 +15,6 @@ body{
 }
 
 .calculator{
-    border:1px solid black;
     width:400px;
     height: 550px;
     border-radius: 10px;
@@ -51,6 +50,15 @@ body{
     cursor: pointer;
 }
 
+.function{
+    height:50px;
+    width:70px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
 .button:hover{
     background-color: #d3d3d3;
 }
@@ -72,4 +80,12 @@ body{
 
 #equal:hover{
     background-color: rgb(216, 142, 3);
+}
+
+#clear{
+    background-color: rgb(65, 187, 187);
+}
+
+#clear:hover{
+    background-color: rgb(55, 168, 168);
 }
