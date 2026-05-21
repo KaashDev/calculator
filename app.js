@@ -48,22 +48,8 @@ buttons.forEach((button)=>{
 });
 });
 
-const keys = "0123456789/*-+."
-document.addEventListener("keydown", (event) => {
-    if(keys.includes(event.key)){
-        screen.textContent += event.key;
-    }
-    if(event.key === 'Enter') calculate();
-    if(event.key === 'Backspace') backspacePressed();
-});
-
-const clear = document.querySelector("#clear");
-clear.addEventListener("click", ()=>{
-    screen.textContent = "";
-});
-
 const equal = document.querySelector("#equal");
-equal.addEventListener("click", calculate());
+equal.addEventListener("click", calculate);
 
 function calculate(){
     let operationString = screen.textContent;
@@ -78,9 +64,24 @@ function calculate(){
     screen.textContent = (operate(operator, num1, num2));
 }
 
-const backspace = document.querySelector("#backspace");
-backspace.addEventListener("click", backspacePressed());
+const keys = "0123456789/*-+."
+document.addEventListener("keydown", (event) => {
+    if(keys.includes(event.key)){
+        screen.textContent += event.key;
+    }
+    if(event.key === 'Enter') calculate();
+    if(event.key === 'Backspace') backspacePressed();
+});
+
+const clear = document.querySelector("#clear");
+clear.addEventListener("click", ()=>{
+    screen.textContent = "";
+});
 
 function backspacePressed(){
     screen.textContent = screen.textContent.substring(0, screen.textContent.length - 1);
 }
+
+const backspace = document.querySelector("#backspace");
+backspace.addEventListener("click", backspacePressed);
+
