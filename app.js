@@ -21,23 +21,14 @@ function divide(a, b){
     return a / b;
 }
 
-
 function operate(operator, num1, num2){
-    if(operator === '+'){
-        return add(num1, num2);
-    }
+    if(operator === '+') return add(num1, num2);
 
-    if(operator === '-'){
-        return subtract(num1, num2);
-    }
+    if(operator === '-') return subtract(num1, num2);
 
-    if(operator === '*'){
-        return multiply(num1, num2);
-    }
+    if(operator === '*') return multiply(num1, num2);
 
-    if(operator === '/'){
-        return divide(num1, num2);
-    }
+    if(operator === '/') return divide(num1, num2);
 }
 
 if (typeof module !== 'undefined' && module.exports) {
@@ -48,8 +39,6 @@ if (typeof module !== 'undefined' && module.exports) {
         divide,
     };
 }
-
-
 
 const screen = document.querySelector(".screen");
 const buttons = document.querySelectorAll(".button");
