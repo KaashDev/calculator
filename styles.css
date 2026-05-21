@@ -59,6 +59,10 @@ body{
     cursor: pointer;
 }
 
+.function:hover{
+    background-color: #d3d3d3;
+}
+
 .button:hover{
     background-color: #d3d3d3;
 }

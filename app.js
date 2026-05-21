@@ -66,3 +66,8 @@ equal.addEventListener("click", ()=>{
     console.log(num2);
     screen.textContent = (operate(operator, num1, num2));
 });
+
+const backspace = document.querySelector("#backspace");
+backspace.addEventListener("click", ()=>{
+    screen.textContent = screen.textContent.substring(0, screen.textContent.length - 1); 
+});
