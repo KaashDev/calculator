@@ -5,25 +5,24 @@
         - multiply
         - divide*/
 
-const add = function(a, b){
+function add(a, b){
     return a + b;
 }
 
-const subtract = function(a, b){
+function subtract(a, b){
     return a - b;
 }
 
-const multiply = function(a, b){
+function multiply(a, b){
     return a * b;
 }
 
-const divide = function(a, b){
+function divide(a, b){
     return a / b;
 }
 
-let operator, num1, num2;
 
-const operate = function(){
+function operate(operator, num1, num2){
     if(operator === '+'){
         return add(num1, num2);
     }
@@ -50,12 +49,31 @@ if (typeof module !== 'undefined' && module.exports) {
     };
 }
 
-const clear = document.querySelector("#clear");
+
+
 const screen = document.querySelector(".screen");
 const buttons = document.querySelectorAll(".button");
-
 buttons.forEach((button)=>{
     button.addEventListener("click", ()=>{
     screen.textContent += button.textContent;
 });
+});
+
+const clear = document.querySelector("#clear");
+clear.addEventListener("click", ()=>{
+    screen.textContent = "";
+});
+
+const equal = document.querySelector("#equal");
+equal.addEventListener("click", ()=>{
+    let operationString = screen.textContent;
+    screen.textContent = "";
+    operationString = operationString.replace("=", "");
+    console.log(operationString);
+    const operator = operationString.match(/[/+\-*]/)[0];
+    console.log(operator);
+    let [num1, num2] = operationString.split(operator).map(Number);
+    console.log(num1);
+    console.log(num2);
+    screen.textContent = (operate(operator, num1, num2));
 });
