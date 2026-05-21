@@ -23,4 +23,7 @@ const divide = function(a, b){
 
 module.exports = {
     add,
+    subtract,
+    multiply,
+    divide,
 };
