@@ -48,7 +48,7 @@ buttons.forEach((button)=>{
 });
 });
 
-const keys = "0123456789/*-+"
+const keys = "0123456789/*-+."
 document.addEventListener("keydown", (event) => {
     if(keys.includes(event.key)){
         screen.textContent += event.key;
