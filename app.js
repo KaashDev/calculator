@@ -54,6 +54,7 @@ document.addEventListener("keydown", (event) => {
         screen.textContent += event.key;
     }
     if(event.key === 'Enter') calculate();
+    if(event.key === 'Backspace') backspacePressed();
 });
 
 const clear = document.querySelector("#clear");
@@ -78,6 +79,8 @@ function calculate(){
 }
 
 const backspace = document.querySelector("#backspace");
-backspace.addEventListener("click", ()=>{
-    screen.textContent = screen.textContent.substring(0, screen.textContent.length - 1); 
-});
+backspace.addEventListener("click", backspacePressed());
+
+function backspacePressed(){
+    screen.textContent = screen.textContent.substring(0, screen.textContent.length - 1);
+}
