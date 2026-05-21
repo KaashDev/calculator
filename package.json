@@ -1,0 +1,24 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaashDev/calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/KaashDev/calculator/issues"
+  },
+  "homepage": "https://github.com/KaashDev/calculator#readme",
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}
